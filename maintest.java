@@ -24,3 +24,16 @@ public class DiscoveryController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
+#Generate error conditions     @GetMapping("/live")
+    public ResponseEntity<Map<String, String>> live() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "live");
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/ready")
+    public ResponseEntity<Map<String, String>> ready() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "ready");
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
