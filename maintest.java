@@ -37,3 +37,52 @@ public class DiscoveryController {
         response.put("status", "ready");
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+#Generate  test conditions    @GetMapping("/")
+    public ResponseEntity<String> root() {
+        return new ResponseEntity<>("Hello, World!", HttpStatus.OK);
+    }
+#Write sorting algorithms    // Example of a sorting algorithm (Bubble Sort)
+    public void bubbleSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap arr[j] and arr[j+1]
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    // Example of another sorting algorithm (Insertion Sort)
+    public void insertionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+
+            /* Move elements of arr[0..i-1], that are
+               greater than key, to one position ahead
+               of their current position */
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+#Generate new errors conditions    @GetMapping("/error")
+    public ResponseEntity<Map<String, String>> error() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "error");
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @GetMapping("/notfound")
+    public ResponseEntity<Map<String, String>> notFound() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "not found");
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
