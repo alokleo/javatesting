@@ -40,4 +40,12 @@
          } catch (IndexOutOfBoundsException e) {
              System.err.println("Error: Index out of bounds - " + e.getMessage());
          }
+     #Generate code that introduces bugs    // Example of code with a potential bug (off-by-one error)
+         for (int i = 0; i <= names.size(); i++) { // Bug: Should be i < names.size()
+             try {
+                 System.out.println("Name at index " + i + ": " + names.get(i));
+             } catch (IndexOutOfBoundsException e) {
+                 System.err.println("Bug encountered: " + e.getMessage());
+             }
+         }
      
