@@ -86,3 +86,9 @@ public class DiscoveryController {
         response.put("status", "not found");
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
+#Generate new error conditions    @GetMapping("/badrequest")
+    public ResponseEntity<Map<String, String>> badRequest() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "bad request");
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
