@@ -32,5 +32,4 @@ public class SampleCode {
         names.forEach(name -> System.out.println("Hello, " + name + "!"));
     }
 }
-
     
