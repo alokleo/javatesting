@@ -32,20 +32,12 @@
          names.forEach(name -> System.out.println("Hello, " + name + "!"));
      }
  }
- #Generate error conditions     // Example of handling potential errors
+#Generate new error conditions // Example of exception handling
          try {
-             // Simulate a potential error (e.g., accessing an invalid index)
-             String name = names.get(5); // This will cause an IndexOutOfBoundsException
-             System.out.println("Accessed name: " + name);
-         } catch (IndexOutOfBoundsException e) {
-             System.err.println("Error: Index out of bounds - " + e.getMessage());
+             int result = 10 / 0;
+             System.out.println("Result: " + result);
+         } catch (ArithmeticException e) {
+             System.out.println("Error: Division by zero!");
          }
-     #Generate code that introduces bugs    // Example of code with a potential bug (off-by-one error)
-         for (int i = 0; i <= names.size(); i++) { // Bug: Should be i < names.size()
-             try {
-                 System.out.println("Name at index " + i + ": " + names.get(i));
-             } catch (IndexOutOfBoundsException e) {
-                 System.err.println("Bug encountered: " + e.getMessage());
-             }
-         }
+     
      
